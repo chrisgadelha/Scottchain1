@@ -1,19 +1,31 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { Blockchain } from '../lib/blockchain';
 
 export const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Store blockchains for each session
 const blockchains = new Map<string, Blockchain>();
 
+// Configuração de CORS com base nas variáveis de ambiente
+const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',') || [];
+
 // Middleware
 app.use(express.json());
 app.use(cors({
+    origin: (origin, callback) => {
+        // Se não houver origem (como chamadas de mesmo domínio) ou a origem estiver na lista, permite
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Origem não permitida pelo CORS'));
+        }
+    },
     exposedHeaders: ['X-Session-ID'],
-    allowedHeaders: ['X-Session-ID', 'Content-Type']
+    allowedHeaders: ['X-Session-ID', 'Content-Type', 'Origin', 'Accept']
 }));
 
 // Serve static files from the frontend directory

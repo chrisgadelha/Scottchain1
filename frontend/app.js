@@ -3,7 +3,7 @@ const sessionId = Date.now().toString(36) + Math.random().toString(36).substr(2)
 sessionStorage.setItem('sessionId', sessionId);
 
 // API endpoints configuration
-const API_BASE_URL = 'http://localhost:3000';
+const BASE_URL = process.env.BACKEND_URL || 'http://localhost:3000';
 const headers = {
     'Content-Type': 'application/json',
     'X-Session-ID': sessionId
@@ -23,7 +23,7 @@ const validationStatus = document.getElementById('validationStatus');
 // Server Status Check
 const checkServerStatus = async () => {
     try {
-        const response = await fetch(`${API_BASE_URL}/chain`, { headers });
+        const response = await fetch(`${BASE_URL}/chain`, { headers });
         if (response.ok) {
             serverStatus.textContent = 'Server Online';
             serverStatus.classList.remove('offline');
@@ -133,7 +133,7 @@ const renderBlockchain = (blocks) => {
 // API Functions
 const fetchChain = async () => {
     try {
-        const response = await fetch(`${API_BASE_URL}/chain`, { headers });
+        const response = await fetch(`${BASE_URL}/chain`, { headers });
         const result = await response.json();
         
         if (result.success) {
@@ -148,7 +148,7 @@ const fetchChain = async () => {
 
 const mineBlock = async (data) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/mine`, {
+        const response = await fetch(`${BASE_URL}/mine`, {
             method: 'POST',
             headers,
             body: JSON.stringify({ data })
@@ -170,7 +170,7 @@ const mineBlock = async (data) => {
 
 const updateBlockData = async (index, newData) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/block/update`, {
+        const response = await fetch(`${BASE_URL}/block/update`, {
             method: 'POST',
             headers,
             body: JSON.stringify({ index, data: newData })
@@ -191,7 +191,7 @@ const updateBlockData = async (index, newData) => {
 
 const remineBlock = async (index) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/block/remine`, {
+        const response = await fetch(`${BASE_URL}/block/remine`, {
             method: 'POST',
             headers,
             body: JSON.stringify({ index })
@@ -212,7 +212,7 @@ const remineBlock = async (index) => {
 
 const validateChain = async () => {
     try {
-        const response = await fetch(`${API_BASE_URL}/validate`, { headers });
+        const response = await fetch(`${BASE_URL}/validate`, { headers });
         const result = await response.json();
         
         if (result.success) {
@@ -227,7 +227,7 @@ const validateChain = async () => {
 
 const resetChain = async () => {
     try {
-        const response = await fetch(`${API_BASE_URL}/reset`, {
+        const response = await fetch(`${BASE_URL}/reset`, {
             method: 'POST',
             headers
         });
