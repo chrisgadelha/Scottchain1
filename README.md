@@ -29,8 +29,8 @@ Uma implementação educacional de blockchain em TypeScript, desenvolvida para d
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/scottchain.git
-cd scottchain
+git clone https://github.com/chrisgadelha/Scottchain1.git
+cd Scottchain1
 ```
 
 2. Instale as dependências:
@@ -114,7 +114,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## Autor
 
-Seu Nome - [seu-email@exemplo.com](mailto:seu-email@exemplo.com)
+Christian Gadelha - [gadelhaweb3@gmail.com)
 
 ## Agradecimentos
 
