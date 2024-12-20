@@ -3,7 +3,9 @@ const sessionId = Date.now().toString(36) + Math.random().toString(36).substr(2)
 sessionStorage.setItem('sessionId', sessionId);
 
 // API endpoints configuration
-const BASE_URL = process.env.BACKEND_URL || 'http://localhost:3000';
+const BASE_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3000'
+    : 'https://scottchain.onrender.com';
 const headers = {
     'Content-Type': 'application/json',
     'X-Session-ID': sessionId
