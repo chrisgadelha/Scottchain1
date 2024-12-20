@@ -1,122 +1,128 @@
 # ScottChain
 
-Uma implementação educacional de blockchain em TypeScript, desenvolvida para demonstrar os conceitos fundamentais de uma blockchain.
+An educational blockchain implementation in TypeScript, designed to demonstrate fundamental blockchain concepts.
 
-## Funcionalidades
+## Features
 
-- ⛓️ Criação e gerenciamento de blockchains
-- ⚒️ Mineração de blocos com proof of work
-- ✏️ Edição de blocos (para fins educacionais)
-- 🔄 Remineração de blocos
-- ✅ Validação da cadeia
-- 🌐 API REST para interação
-- 🔍 Interface web para visualização
+- ⛓️ Blockchain creation and management
+- ⚒️ Block mining with proof of work
+- ✏️ Block editing (for educational purposes)
+- 🔄 Block re-mining
+- ✅ Chain validation
+- 🌐 REST API for interaction
+- 🔍 Web interface for visualization
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - TypeScript
 - Node.js
 - Express.js
-- Jest (testes)
+- Jest (testing)
 - HTML/CSS/JavaScript (frontend)
 
-## Pré-requisitos
+## Deployment
 
-- Node.js (versão 14 ou superior)
-- npm ou yarn
+- **Backend:** Hosted on Render
+- **Frontend:** Deployed on Vercel
+- **Live Demo:** [ScottChain Live](https://your-vercel-url.vercel.app)
 
-## Instalação
+## Prerequisites
 
-1. Clone o repositório:
+- Node.js (version 14 or higher)
+- npm or yarn
+
+## Installation
+
+1. Clone the repository:
 ```bash
 git clone https://github.com/chrisgadelha/Scottchain1.git
 cd Scottchain1
 ```
 
-2. Instale as dependências:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Compile o TypeScript:
+3. Compile TypeScript:
 ```bash
 npm run build
 ```
 
-4. Inicie o servidor:
+4. Start the server:
 ```bash
 npm start
 ```
 
-O servidor estará rodando em `http://localhost:3000`
+The server will run at `http://localhost:3000`
 
-## Uso da API
+## API Usage
 
-Todas as requisições devem incluir o header `X-Session-ID` para identificar a sessão.
+All requests must include the `X-Session-ID` header to identify the session.
 
 ### Endpoints
 
-- `POST /reset` - Reseta a blockchain
-- `GET /chain` - Obtém a blockchain atual
-- `POST /mine` - Minera um novo bloco
-- `GET /validate` - Valida a blockchain
-- `POST /block/update` - Atualiza dados de um bloco
-- `POST /block/remine` - Reminera um bloco
+- `POST /reset` - Reset the blockchain
+- `GET /chain` - Get current blockchain
+- `POST /mine` - Mine a new block
+- `GET /validate` - Validate blockchain
+- `POST /block/update` - Update block data
+- `POST /block/remine` - Re-mine a block
 
-### Exemplo de Uso
+### Example Usage
 
 ```bash
-# Criar um novo bloco
+# Create a new block
 curl -X POST http://localhost:3000/mine \
   -H "X-Session-ID: session123" \
   -H "Content-Type: application/json" \
-  -d '{"data": "Meu primeiro bloco"}'
+  -d '{"data": "My first block"}'
 ```
 
-## Testes
+## Testing
 
-Execute os testes unitários e de integração:
+Run unit and integration tests:
 ```bash
 npm test
 ```
 
-Para ver a cobertura de testes:
+To view test coverage:
 ```bash
 npm run test:coverage
 ```
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 src/
-  ├── lib/           # Classes principais
+  ├── lib/           # Core classes
   │   ├── block.ts
   │   └── blockchain.ts
-  ├── server/        # Servidor Express
+  ├── server/        # Express server
   │   └── server.ts
-  ├── __tests__/     # Testes
+  ├── __tests__/     # Tests
   │   ├── block.test.ts
   │   └── blockchain.test.ts
-  └── frontend/      # Interface web
+  └── frontend/      # Web interface
 ```
 
-## Contribuição
+## Contributing
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
 
-## Licença
+## License
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+This project is under the MIT License. See [LICENSE](LICENSE) for details.
 
-## Autor
+## Author
 
-Christian Gadelha - [gadelhaweb3@gmail.com)
+Christian Gadelha - [gadelhaweb3@gmail.com]
 
-## Agradecimentos
+## Acknowledgments
 
-- Luiz Tools pelo curso e inspiração
-- Comunidade de blockchain por recursos educacionais 
+- Luiz Tools for the course and inspiration
+- Blockchain community for educational resources
