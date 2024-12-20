@@ -24,7 +24,7 @@ An educational blockchain implementation in TypeScript, designed to demonstrate 
 
 - **Backend:** Hosted on Render
 - **Frontend:** Deployed on Vercel
-- **Live Demo:** [ScottChain Live](https://your-vercel-url.vercel.app)
+- **Live Demo:** [ScottChain Live](https://scottchain.vercel.app/)
 
 ## Prerequisites
 
@@ -106,13 +106,98 @@ src/
   └── frontend/      # Web interface
 ```
 
-## Contributing
+## Quick Start Guide 🚀
 
-1. Fork the project
-2. Create a feature branch (`git checkout -b feature/new-feature`)
-3. Commit your changes (`git commit -m 'Add new feature'`)
-4. Push to the branch (`git push origin feature/new-feature`)
+### Blockchain Interactions
+
+1. **Add New Blocks**
+   - Enter data in the input field
+   - Click "Mine Block" to add a new block to the chain
+   - Each block contains unique data and a calculated hash
+
+2. **Block Manipulation**
+   - Edit any block's data using the input field
+   - Click "Update" to modify block content
+   - Note: Updating breaks the blockchain's integrity
+
+3. **Block Recovery**
+   - Use "Remine" button to recalculate a block's hash
+   - Restores blockchain consistency after modifications
+
+4. **Chain Validation**
+   - Click "Validate Chain" to check blockchain integrity
+   - Identifies corrupted or tampered blocks
+   - Ensures data immutability
+
+5. **Reset Blockchain**
+   - Use "Reset Chain" to start a fresh blockchain
+   - Removes all existing blocks
+   - Creates a new genesis block
+
+### Common Use Cases
+
+- Educational blockchain exploration
+- Understanding proof-of-work concepts
+- Demonstrating blockchain immutability
+- Experimenting with block manipulation
+
+## Contributing Guidelines 🤝
+
+### Ways to Contribute
+
+1. **Code Contributions**
+   - Fix bugs
+   - Implement new features
+   - Improve performance
+   - Enhance documentation
+
+2. **Reporting Issues**
+   - Use GitHub Issues
+   - Provide detailed description
+   - Include steps to reproduce
+   - Attach relevant screenshots/logs
+
+3. **Feature Requests**
+   - Open a new issue
+   - Describe proposed feature
+   - Explain its potential value
+   - Discuss implementation approach
+
+### Contribution Process
+
+1. Fork the repository
+2. Create a feature branch
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes
+   ```bash
+   git commit -m 'Add detailed commit message'
+   ```
+4. Push to your branch
+   ```bash
+   git push origin feature/your-feature-name
+   ```
 5. Open a Pull Request
+   - Describe changes
+   - Link related issues
+   - Request code review
+
+### Development Setup
+
+- Use Node.js 14+
+- Follow existing code style
+- Write unit tests for new features
+- Ensure all tests pass before submitting
+
+### Code of Conduct
+
+- Be respectful
+- Collaborate constructively
+- Welcome diverse perspectives
+- Focus on learning and improvement
+
+**Happy Coding! 💻🔗**
 
 ## License
 
